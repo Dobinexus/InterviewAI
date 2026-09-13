@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InterviewAI — Requirement Discovery Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <!-- AUTH -->
+  <section id="authView" class="auth-shell">
+    <div class="auth-brand-panel">
+      <div class="brand-mark">✦</div>
+      <div class="eyebrow">REQUIREMENT DISCOVERY WORKSPACE</div>
+      <h1>Turn conversations<br>into <span>better systems.</span></h1>
+      <p>InterviewAI helps you prepare focused questions, capture evidence, and turn user feedback into clear system requirements.</p>
+      <div class="insight-bubble">
+        <strong>AI listening</strong>
+        <span>“Finding records takes too long.”</span>
+      </div>
+    </div>
+
+    <div class="auth-form-panel">
+      <div class="auth-logo">✦ Interview<span>AI</span></div>
+
+      <form id="loginForm" class="auth-card">
+        <div class="eyebrow">WELCOME BACK</div>
+        <h2>Open your interview workspace</h2>
+        <p class="muted">Sign in to continue your requirement discovery work.</p>
+
+        <label>Email address</label>
+        <input id="loginEmail" type="email" placeholder="you@example.com" required>
+
+        <label>Password</label>
+        <div class="password-wrap">
+          <input id="loginPassword" type="password" placeholder="Enter your password" required>
+          <button type="button" class="eye" data-target="loginPassword">◉</button>
+        </div>
+
+        <div class="row-between small">
+          <label class="check"><input id="rememberMe" type="checkbox"> Remember me</label>
+          <button type="button" class="text-btn" id="forgotBtn">Forgot password?</button>
+        </div>
+
+        <button class="primary-btn wide" type="submit">Enter workspace <span>→</span></button>
+        <div class="demo-note">Demo account: demo@interviewai.local / password</div>
+
+        <div class="signup-line">Don't have an account? <button type="button" class="text-btn" id="showRegister">Create an account</button></div>
+      </form>
+
+      <form id="registerForm" class="auth-card hidden">
+        <div class="eyebrow">NEW INTERVIEWER</div>
+        <h2>Create your workspace account</h2>
+        <p class="muted">Create an interviewer account for the prototype.</p>
+
+        <label>Full name</label>
+        <input id="regName" type="text" placeholder="Your full name" required>
+
+        <label>Email address</label>
+        <input id="regEmail" type="email" placeholder="you@example.com" required>
+
+        <label>Password</label>
+        <div class="password-wrap">
+          <input id="regPassword" type="password" placeholder="At least 6 characters" required minlength="6">
+          <button type="button" class="eye" data-target="regPassword">◉</button>
+        </div>
+
+        <label>Confirm password</label>
+        <div class="password-wrap">
+          <input id="regConfirm" type="password" placeholder="Repeat your password" required>
+          <button type="button" class="eye" data-target="regConfirm">◉</button>
+        </div>
+
+        <label class="check terms"><input id="regTerms" type="checkbox" required> I understand this is an interviewer account for the system.</label>
+        <button class="primary-btn wide" type="submit">Create account <span>→</span></button>
+        <div class="signup-line">Already have an account? <button type="button" class="text-btn" id="showLogin">Back to sign in</button></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section id="appView" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="side-brand"><div class="mini-mark">✦</div><div>Interview<span>AI</span><small>DISCOVERY STUDIO</small></div></div>
+      <nav>
+        <button data-page="dashboard" class="nav-item active">⌂ <span>Dashboard</span></button>
+        <button data-page="newInterview" class="nav-item">＋ <span>New Interview</span></button>
+        <button data-page="questions" class="nav-item">? <span>Questions</span></button>
+        <button data-page="interviews" class="nav-item">◌ <span>Interviews</span></button>
+        <button data-page="insights" class="nav-item">✧ <span>Insights</span></button>
+        <button data-page="reports" class="nav-item">▣ <span>Reports</span></button>
+      </nav>
+      <div class="side-bottom">
+        <button class="nav-item">⚙ <span>Settings</span></button>
+        <button id="logoutBtn" class="nav-item">↪ <span>Logout</span></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">REQUIREMENT DISCOVERY</div>
+          <h2 id="pageTitle">Dashboard</h2>
+        </div>
+        <div class="user-chip"><div class="avatar">JS</div><div><strong id="userName">Interviewer</strong><small>Interviewer</small></div></div>
+      </header>
+
+      <div id="pageContent"></div>
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
